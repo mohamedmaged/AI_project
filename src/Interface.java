@@ -75,7 +75,7 @@ public class Interface extends JFrame {
             root= (String)roottypescb.getItemAt(roottypescb.getSelectedIndex());
             clipsEnvironment.assertdata(color,season,lifecycle,soil,size,perfume,root);
             clipsEnvironment.run();
-            answer.setText("FLower is "+clipsEnvironment.getFlower());
+            answer.setText(clipsEnvironment.getFlower());
             clipsEnvironment.reset();
             //answer.setText(answer.getText()+"lily");
             }

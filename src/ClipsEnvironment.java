@@ -40,16 +40,28 @@ public class ClipsEnvironment {
     { PrimitiveValue value=clips.eval("(facts)");
         String ou = value.toString();
         System.out.println(ou);
-
-        FactAddressValue fv = (FactAddressValue)((MultifieldValue) clips.eval("(find-fact ((?x flower)) TRUE)")).get(0);
         String output = null;
+        MultifieldValue mv = ((MultifieldValue) clips.eval("(find-all-facts ((?x flower)) TRUE)"));
+        if(mv.size()==1)
+            output = "The Flower is ";
+        else if(mv.size() >1)
+            output = "The Flower Maybe ";
+
+        for (int i = 0; i <mv.size() ; i++) {
 
 
-        try {
-            output = fv.getFactSlot("name").toString();
-        } catch (Exception e) {
-            e.printStackTrace();
+                FactAddressValue fv = (FactAddressValue)mv.get(i);
+
+            try {
+                if(mv.size() > 1 && i < mv.size()-1 )
+                output = output+fv.getFactSlot("name").toString()+"\n OR ";
+                else
+                    output = output+fv.getFactSlot("name").toString();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
         System.out.println(output);
         return output;
     }
