@@ -186,10 +186,10 @@
 
 
 (defrule flowertype13
-(flower lily)
+(flower ( name lily))
 (perfumed true)
 =>
-(assert (flower (name White-lily))
+   (assert (flower (name white-lily))
 )
 )
 
