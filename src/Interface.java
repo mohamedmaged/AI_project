@@ -43,8 +43,8 @@ public class Interface extends JFrame {
             answer.setText(perfume);
             }
              });  
-        
-        
+
+
         add(colorscb);
         add(sizetf);
         add(seasoncb);
