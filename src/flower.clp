@@ -1,3 +1,8 @@
+(deftemplate flower
+    (slot name)
+)
+
+
 (defrule size-small
 (size ?v )
 (test (> ?v 10))
@@ -35,21 +40,29 @@
 )
 
 
+
+
 (defrule flowertype1
 (season summer)
 (color ?v & blue|purple|yellow)
 (life perennial)
 (root bulb)
 => 
-(assert (flower Iris))
+(assert (flower (name Iris))
 )
+)
+
+
 
 (defrule flowertype2
 (season autumn)
 (color ?v & white|pink|pinkish-red)
 => 
-(assert (flower Anemone))
+(assert (flower (name Anemone))
 )
+)
+
+
 
 
 (defrule flowertype3
@@ -57,8 +70,11 @@
 (height medium)
 (color ?v & white|yellow|purple|red)
 => 
-(assert (flower Chrysanthemum))
+(assert (flower (name Chrysanthemum))
 )
+)
+
+
 
 
 
@@ -68,7 +84,8 @@
 (color ?v & white|yellow|purple|red|orange|blue)
 (perfumed true)
 => 
-(assert (flower Freesia))
+(assert (flower (name Freesia))
+)
 )
 
 
@@ -78,8 +95,11 @@
 (root bulbs)
 (season summer)
 => 
-(assert (flower Dahlia))
+(assert (flower (name Dahlia))
 )
+)
+
+
 
 
 (defrule flowertype6
@@ -87,8 +107,10 @@
 (root bulbs)
 (season spring)
 => 
-(assert (flower Narcissus))
+(assert (flower (name Narcissus))
 )
+)
+
 
 
 (defrule flowertype7
@@ -97,8 +119,10 @@
 (root roots)
 (soil acidic)
 => 
-(assert (flower Camellia))
+(assert (flower (name Camellia))
 )
+)
+
 
 
 (defrule flowertype8
@@ -108,8 +132,10 @@
 (height small)
 (life perennial)
 => 
-(assert (flower Lily))
+(assert (flower (name Lily))
 )
+)
+
 
 
 (defrule flowertype9
@@ -117,15 +143,21 @@
 (height small)
 (life annual)
 => 
-(assert (flower Begonia))
+(assert (flower (name Begonia))
 )
+)
+
+
 
 (defrule flowertype10
 (color ?v & white|pink|red)
 (season winter)
 => 
-(assert (flower Azalea))
+(assert (flower (name Azalea))
 )
+)
+
+
 
 
 
@@ -136,8 +168,10 @@
 (root roots)
 
 => 
-(assert (flower Anemone))
+(assert (flower (name Anemone))
 )
+)
+
 
 (defrule flowertype12 
 (life perenial)
@@ -146,12 +180,16 @@
 (perfumed true)
 (soil well-drained)
 =>
-(assert(flower Rose))
+(assert (flower (name Rose))
 )
+)
+
 
 (defrule flowertype13
 (flower lily)
 (perfumed true)
 =>
-(assert (flower White_lily))
+(assert (flower (name White-lily))
 )
+)
+
