@@ -80,7 +80,7 @@
 
 (defrule flowertype4
 (season spring)
-(root bulbs)
+(root bulb)
 (color ?v & white|yellow|purple|red|orange|blue)
 (perfumed true)
 => 
@@ -92,7 +92,7 @@
 (defrule flowertype5
 (life perennial)
 (height tall)
-(root bulbs)
+(root bulb)
 (season summer)
 => 
 (assert (flower (name Dahlia))
@@ -104,7 +104,7 @@
 
 (defrule flowertype6
 (color ?v & white|yellow)
-(root bulbs)
+(root bulb)
 (season spring)
 => 
 (assert (flower (name Narcissus))
@@ -127,12 +127,12 @@
 
 (defrule flowertype8
 (season spring)
-(root bulbs)
+(root bulb)
 (perfumed true)
 (height small)
 (life perennial)
 => 
-(assert (flower (name Lily))
+(assert (flower (name lily))
 )
 )
 
@@ -174,7 +174,7 @@
 
 
 (defrule flowertype12 
-(life perenial)
+(life perennial)
 (root roots)
 (color ?v & white|pink|red|yellow)
 (perfumed true)
@@ -186,10 +186,10 @@
 
 
 (defrule flowertype13
-(flower ( name lily))
+?fact <- (flower ( name lily))
 (perfumed true)
 =>
-   (assert (flower (name white-lily))
-)
+   (retract ?fact)
+   (assert (flower (name white-lily)))
 )
 

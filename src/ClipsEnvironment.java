@@ -10,14 +10,15 @@ public class ClipsEnvironment {
         clips= new Environment();
         clips.loadFromResource("/flower.clp");
     }
-    public void assertdata(String color,String season,String lifecycle,String soil,String size,String perfume)
+    public void assertdata(String color,String season,String lifecycle,String soil,String size,String perfume,String root)
     {
         color = "(assert (color "+color+"))";
         season ="(assert (season "+season+"))";
-        lifecycle = "(assert (life "+lifecycle+"))";
+        lifecycle = "(assert (cycle "+lifecycle+"))";
         soil = "(assert (soil "+soil+"))";
         size = "(assert (size "+size+"))";
         perfume = "(assert (perfumed "+perfume+"))";
+        root = "(assert (root "+root+"))";
 
         clips.eval(color);
         clips.eval(season);
@@ -25,6 +26,7 @@ public class ClipsEnvironment {
         clips.eval(soil);
         clips.eval(size);
         clips.eval(perfume);
+        clips.eval(root);
     }
     public void run()
     {
@@ -35,19 +37,20 @@ public class ClipsEnvironment {
         clips.reset();
     }
     public String getFlower()
-    {
-//        FactAddressValue fv = (FactAddressValue)((MultifieldValue) clips.eval("(find-fact ((?x Coolness)) TRUE)")).get(0);
-        String output = null;
-
-        PrimitiveValue value=clips.eval("(facts)");
+    { PrimitiveValue value=clips.eval("(facts)");
         String ou = value.toString();
         System.out.println(ou);
-//        try {
-//            output = fv.getFactSlot("cool").toString();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println(output);
+
+        FactAddressValue fv = (FactAddressValue)((MultifieldValue) clips.eval("(find-fact ((?x flower)) TRUE)")).get(0);
+        String output = null;
+
+
+        try {
+            output = fv.getFactSlot("name").toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(output);
         return output;
     }
 }

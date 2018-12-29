@@ -1,19 +1,18 @@
 
-package expertsystem;
-
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;  
 public class Interface extends JFrame {
   String color, season, lifecycle, soil, size, perfume,root;
+    ClipsEnvironment clipsEnvironment ;
 
     Interface(){
         String colors[]={"blue","purple","yellow","red","white","pink","orange","violet","pinkish-red"};  
-        String seasons[]={"Autumn","Summer","Spring","Winter"};  
-        String lifecycles[]={"One year","More than one year"};  
-        String soils[]={"Acidic","Loose","Fertile","Rich","Well-drained"};
-        String roottypes[]={"Bulb","Root"};
-        
+        String seasons[]={"autumn","summer","spring","winter"};
+        String lifecycles[]={"one-year","more-than-one-year"};
+        String soils[]={"acidic","loose","fertile","rich","well-drained"};
+        String roottypes[]={"bulb","roots"};
+        clipsEnvironment = new ClipsEnvironment();
         JPanel panel11=new JPanel(new FlowLayout(FlowLayout.CENTER));
         JPanel panel12=new JPanel(new FlowLayout(FlowLayout.CENTER));
         JPanel panel21=new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -74,6 +73,10 @@ public class Interface extends JFrame {
                 perfume = "false";
             }
             root= (String)roottypescb.getItemAt(roottypescb.getSelectedIndex());
+            clipsEnvironment.assertdata(color,season,lifecycle,soil,size,perfume,root);
+            clipsEnvironment.run();
+            answer.setText("FLower is "+clipsEnvironment.getFlower());
+            clipsEnvironment.reset();
             //answer.setText(answer.getText()+"lily");
             }
              });  
