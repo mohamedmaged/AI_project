@@ -1,15 +1,10 @@
 
+package expertsystem;
 
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;  
 public class Interface extends JFrame {
-
-ClipsEnvironment clipsEnvironment ;
-
-
-
-
   String color, season, lifecycle, soil, size, perfume,root;
 
     Interface(){
@@ -18,29 +13,50 @@ ClipsEnvironment clipsEnvironment ;
         String lifecycles[]={"One year","More than one year"};  
         String soils[]={"Acidic","Loose","Fertile","Rich","Well-drained"};
         String roottypes[]={"Bulb","Root"};
-            clipsEnvironment = new ClipsEnvironment();
-        JPanel panel1=new JPanel();
-        JPanel panel2=new JPanel();
-        JPanel panel3=new JPanel();
         
-
+        JPanel panel11=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel12=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel21=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel22=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel31=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel32=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel41=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel42=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panel51=new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        JPanel panel52=new JPanel();
+        //panel1.setBounds(40,80,300,300);  
+        
+        panel11.setBackground(Color.LIGHT_GRAY);
+        panel12.setBackground(Color.LIGHT_GRAY);
+        panel21.setBackground(Color.LIGHT_GRAY);
+        panel22.setBackground(Color.LIGHT_GRAY);
+        panel31.setBackground(Color.LIGHT_GRAY);
+        panel32.setBackground(Color.LIGHT_GRAY);
+        panel41.setBackground(Color.LIGHT_GRAY);
+        panel42.setBackground(Color.LIGHT_GRAY);
+        panel51.setBackground(Color.LIGHT_GRAY);
+        panel52.setBackground(Color.LIGHT_GRAY);
+        
+        
         JComboBox colorscb = new JComboBox(colors);
         JComboBox seasoncb = new JComboBox(seasons);
         JComboBox lifecyclecb = new JComboBox(lifecycles);
         JComboBox soilcb = new JComboBox(soils);
         JComboBox roottypescb = new JComboBox(roottypes);
        
-        JTextField sizetf = new JTextField();
+        JTextField sizetf = new JTextField(7);
         
         JLabel answer = new JLabel("Your flower is ");
-        
+       
         JLabel sizelbl = new JLabel("Size");
         JLabel colorlbl = new JLabel("Color");
         JLabel seasonlbl = new JLabel("Season");
         JLabel lifecyclelbl= new JLabel("Lifecycle");
-        JLabel Soillbl = new JLabel("Size");
+        JLabel soillbl = new JLabel("Soil");
+        JLabel roottypelbl = new JLabel("Root type");
         
         JCheckBox perfumechb = new JCheckBox("Perfume");
+        perfumechb.setBackground(Color.LIGHT_GRAY);
         
         JButton button = new JButton("What's my flower");
         
@@ -57,28 +73,62 @@ ClipsEnvironment clipsEnvironment ;
             else{
                 perfume = "false";
             }
-            clipsEnvironment.assertdata(color,season,lifecycle,soil,size,perfume);
-            clipsEnvironment.run();
-            answer.setText(clipsEnvironment.getFlower());
-            clipsEnvironment.reset();
+            root= (String)roottypescb.getItemAt(roottypescb.getSelectedIndex());
+            //answer.setText(answer.getText()+"lily");
             }
              });  
-
-            root= (String)roottypescb.getItemAt(roottypescb.getSelectedIndex());
-            answer.setText(root);
-
-        add(colorscb);
-        add(sizetf);
-        add(seasoncb);
-        add(perfumechb);
-        add(lifecyclecb);
-        add(roottypescb);
-        add(soilcb);
-        add(button);
-        add(answer);
         
-        setLayout(new GridLayout(4,4,10,10));
-        setSize(500,500);  
-        setVisible(true);
+        panel11.add(colorlbl);
+        panel11.add(colorscb);
+        panel12.add(sizelbl);
+        panel12.add(sizetf);
+        
+        panel21.add(seasonlbl);
+        panel21.add(seasoncb);
+        panel22.add(roottypelbl);
+        panel22.add(roottypescb);
+        
+        panel31.add(lifecyclelbl);
+        panel31.add(lifecyclecb);
+        panel32.add(soillbl);
+        panel32.add(soilcb);
+        panel11.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel11.setVisible(true);
+        panel12.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel12.setVisible(true);
+        
+        panel41.add(perfumechb);
+        panel42.add(button);
+        panel51.add(answer);
+        panel21.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel21.setVisible(true);
+        panel22.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel22.setVisible(true);
+        panel31.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel31.setVisible(true);
+        panel32.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel32.setVisible(true);
+        panel41.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel41.setVisible(true);
+        panel42.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel42.setVisible(true);
+        panel51.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        panel51.setVisible(true);
+        panel52.setVisible(true);
+
+        add(panel11);
+        add(panel12);
+        add(panel21);
+        add(panel22);
+        add(panel31);
+        add(panel32);
+        add(panel41);
+        add(panel42);
+        add(panel51);
+        add(panel52);
+          
+        setLayout(new GridLayout(5,2));
+        setSize(500,400);  
+        setVisible(true);  
     }
 }
