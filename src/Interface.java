@@ -5,13 +5,15 @@ import java.awt.*;
 import java.awt.event.*;  
 public class Interface extends JFrame {
   String color, season, lifecycle, soil, size, perfume;
-
+ClipsEnvironment clipsEnvironment ;
     Interface(){
-        String colors[]={"blue","purple","yellow","red","white","pink","orange","violet","pinkish-red"};  
-        String seasons[]={"Autumn","Summer","Spring","Winter"};  
-        String lifecycles[]={"One year","More than one year"};  
-        String soils[]={"Acidic","Loose","Fertile","Rich","Well-drained"};  
-        
+        String colors[]={"blue","purple","yellow","red","white","pink","orange","violet","pinkish-red"};
+        String seasons[]={"autumn","summer","spring","winter"};
+        String lifecycles[]={"one-year","more-than-one-year"};
+        String soils[]={"acidic","loose","fertile","rich","well-drained"};
+
+        clipsEnvironment = new ClipsEnvironment();
+
         JComboBox colorscb = new JComboBox(colors);
         JComboBox seasoncb = new JComboBox(seasons);
         JComboBox lifecyclecb = new JComboBox(lifecycles);
@@ -40,10 +42,12 @@ public class Interface extends JFrame {
             else{
                 perfume = "false";
             }
-            answer.setText(perfume);
+            clipsEnvironment.assertdata(color,season,lifecycle,soil,size,perfume);
+            clipsEnvironment.run();
+            answer.setText(clipsEnvironment.getFlower());
+            clipsEnvironment.reset();
             }
              });  
-
 
         add(colorscb);
         add(sizetf);

@@ -1,6 +1,7 @@
 import net.sf.clipsrules.jni.Environment;
 import net.sf.clipsrules.jni.FactAddressValue;
 import net.sf.clipsrules.jni.MultifieldValue;
+import net.sf.clipsrules.jni.PrimitiveValue;
 
 public class ClipsEnvironment {
     private   Environment clips;
@@ -35,13 +36,18 @@ public class ClipsEnvironment {
     }
     public String getFlower()
     {
-        FactAddressValue fv = (FactAddressValue)((MultifieldValue) clips.eval("(find-fact ((?x Coolness)) TRUE)")).get(0);
-        String m = null;
-        try {
-            m = fv.getFactSlot("cool").toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println(m);
+//        FactAddressValue fv = (FactAddressValue)((MultifieldValue) clips.eval("(find-fact ((?x Coolness)) TRUE)")).get(0);
+        String output = null;
+
+        PrimitiveValue value=clips.eval("(facts)");
+        String ou = value.toString();
+        System.out.println(ou);
+//        try {
+//            output = fv.getFactSlot("cool").toString();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(output);
+        return output;
     }
 }
