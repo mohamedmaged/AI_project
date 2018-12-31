@@ -1,18 +1,51 @@
+package javaapplication106;
+
 
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;  
 public class Interface extends JFrame {
   String color, season, lifecycle, soil, size, perfume,root;
-    ClipsEnvironment clipsEnvironment ;
+//  ClipsEnvironment clipsEnvironment ;
 
     Interface(){
-        String colors[]={"blue","purple","yellow","red","white","pink","orange","violet","pinkish-red"};  
+         panel1 p1=new panel1();
+         
+         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         this.setSize(700, 600);
+         JPanel p=new JPanel();
+         p.setBackground(Color.LIGHT_GRAY);
+         JButton Startbutton = new JButton("START");    
+         p.add(Startbutton);
+         Startbutton.setLocation(350, 300);
+         p.setVisible(true);
+         this.add(p);     
+         setVisible(true);  
+         Container c=this.getContentPane();
+         Startbutton.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){       
+                c.remove(p);
+                c.add(p1);
+                c.revalidate();
+                c.repaint();
+                c.setVisible(true);       
+           }
+             });  
+         
+  /*          clipsEnvironment.assertdata(color,season,lifecycle,soil,size,perfume,root);
+            clipsEnvironment.run();
+            answer.setText(clipsEnvironment.getFlower());
+            clipsEnvironment.reset();*/
+            //answer.setText(answer.getText()+"lily");
+           
+    }
+    }
+    /*    String colors[]={"blue","purple","yellow","red","white","pink","orange","violet","pinkish-red"};  
         String seasons[]={"autumn","summer","spring","winter"};
         String lifecycles[]={"one-year","more-than-one-year"};
-        String soils[]={"acidic","loose","fertile","rich","well-drained"};
+        String soils[]={" ","acidic","loose","fertile","rich","well-drained"};
         String roottypes[]={"bulb","roots"};
-        clipsEnvironment = new ClipsEnvironment();
+ //       clipsEnvironment = new ClipsEnvironment();
         JPanel panel11=new JPanel(new FlowLayout(FlowLayout.CENTER));
         JPanel panel12=new JPanel(new FlowLayout(FlowLayout.CENTER));
         JPanel panel21=new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -73,12 +106,12 @@ public class Interface extends JFrame {
                 perfume = "false";
             }
             root= (String)roottypescb.getItemAt(roottypescb.getSelectedIndex());
-            clipsEnvironment.assertdata(color,season,lifecycle,soil,size,perfume,root);
+  /*          clipsEnvironment.assertdata(color,season,lifecycle,soil,size,perfume,root);
             clipsEnvironment.run();
             answer.setText(clipsEnvironment.getFlower());
-            clipsEnvironment.reset();
+            clipsEnvironment.reset();*/
             //answer.setText(answer.getText()+"lily");
-            }
+            /*}
              });  
         
         panel11.add(colorlbl);
@@ -135,3 +168,4 @@ public class Interface extends JFrame {
         setVisible(true);  
     }
 }
+*/
