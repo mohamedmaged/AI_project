@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author user
@@ -49,6 +51,20 @@ public class panel3 extends javax.swing.JPanel {
         add(jButton1);
 
         jButton2.setText("Why?");
+        jButton2.addActionListener(new java.awt.event.ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                jTextArea1.setText("f color is Red, flower name could be Anemone, Chrysanthemum, Freesia, Camellia, Azalea or Rose.\n" +
+                        "If color is yellow, flower name could be Iris, Chrysanthemum, Freesia, Narcissus Anemone or Rose.\n" +
+                        "If color is blue, flower name could be Iris, Freesia or Anemone.\n" +
+                        "If color is purple, flower name could be Iris, Chrysanthemum or Freesia.\n" +
+                        "If color is white, flower name could be Anemone, Chrysanthemum, Freesia, Narcissus, Camellia, Azalea or Rose.\n" +
+                        "If color is pink, flower name could be  Anemone, Camellia, Azalea or Rose.\n" +
+                        "If color is orange, flower name could be  Freesia.\n" +
+                        "If color is pinkish-red, flower name could be Anemone.");
+            }
+        });
         add(jButton2);
 
         jTextArea1.setColumns(20);

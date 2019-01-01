@@ -87,6 +87,9 @@ public class panel1 extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        jTextArea1.setText("If season is summer, flower name could be Iris or Dahlia.\n" +
+                "If season is winter, flower name could be Azalea or Anemone.\n" +
+                "If season is autumn, flower name could be Anemone or Chrysanthemum");
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

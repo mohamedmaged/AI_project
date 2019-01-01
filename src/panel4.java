@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author user
@@ -57,6 +59,14 @@ public class panel4 extends javax.swing.JPanel {
         add(jButton1);
 
         jButton2.setText("Why?");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                jTextArea1.setText("If Life cycle is one year cycle, the flower life type is annual,\n" +
+                        "If Life cycle is more than a year, the flower life type is perennial.\n" +
+                        "A flower with a life type annual could be B");
+            }
+        });
         add(jButton2);
 
         jTextArea1.setColumns(20);

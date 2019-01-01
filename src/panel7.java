@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author user
@@ -51,6 +53,12 @@ public class panel7 extends javax.swing.JPanel {
         add(jButton1);
 
         jButton2.setText("Why?");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                jTextArea1.setText("If flower is perfumed, flower name could be Freesia, lily, Rose or white-lily.\n");
+            }
+        });
         add(jButton2);
 
         jTextArea1.setColumns(20);

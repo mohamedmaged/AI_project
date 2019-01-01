@@ -5,6 +5,7 @@
  */
 
 import java.awt.Container;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -49,6 +50,14 @@ public class panel2 extends javax.swing.JPanel {
         add(jButton1);
 
         jButton2.setText("Why?");
+        jButton2.addActionListener(new java.awt.event.ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                jTextArea1.setText("If roots type is roots, flower name could be Camellia, Anemone or Rose.\n" +
+                        "If roots type is bulbs, flower name could be Lily, Narcissus, Dahlia or Freesia");
+            }
+        });
         add(jButton2);
 
         jTextArea1.setColumns(20);

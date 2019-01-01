@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 
+import javax.swing.*;
+
 /**
  *
  * @author user
  */
-public class panel8 extends javax.swing.JPanel {
+public class panel8  extends javax.swing.JPanel {
 
     String answer;
     /**
@@ -39,7 +41,8 @@ public class panel8 extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
                 clipsEnvironment.assertdata(Globals.COLOR,Globals.SEASON,Globals.LIFECYCLE,Globals.SOIL,Globals.SIZE,Globals.PERUME,Globals.ROOT);
                 clipsEnvironment.run();
-                jLabel1.setText(clipsEnvironment.getFlower());
+                answer =clipsEnvironment.getFlower();
+                jLabel1.setText(answer);
                 clipsEnvironment.reset();
             }
         });
@@ -69,6 +72,97 @@ public class panel8 extends javax.swing.JPanel {
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        //You can write the action performed on clicking "How" button here
+        try {
+            if (answer.equals("The Flower is Iris")) {
+                jTextArea1.setText("Becasue if season is summer\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "and the life type is perennial\n" +
+                        "and root type is bulb\n" +
+                        "then flower name is Iris");
+            }
+            if (answer.equals("The Flower is Anemone")) {
+                jTextArea1.setText("Becasue if season is autumn\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "then flower name is Anemone");
+            }
+            if (answer.equals("The Flower is Chrysanthemum")) {
+                jTextArea1.setText("Becasue if season is autumn\n" +
+                        "and height is medium +\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "then flower name is Anemone");
+            }
+            if (answer.equals("The Flower is Freesia")) {
+                jTextArea1.setText("Becasue if season is spring\n" +
+                        "and root type is bulb\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "and perfumed is true\n" +
+                        "then flower name is Freesia");
+            }
+            if (answer.equals("The Flower is Dahlia")) {
+                jTextArea1.setText("Becasue if season is summer\n" +
+                        "and root type is bulb\n" +
+                        "and the height is tall\n" +
+                        "then flower name is Dahlia");
+            }
+            if (answer.equals("The Flower is Narcissus")) {
+                jTextArea1.setText("Becasue if season is spring\n" +
+                        "and root type is bulb\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "then flower name is Narcissus");
+            }
+            if (answer.equals("The Flower is Camellia")) {
+                jTextArea1.setText("Becasue if soil is acidic\n" +
+                        "and root type is roots\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "and life type is perennial\n" +
+                        "then flower name is Camellia");
+            }
+            if (answer.equals("The Flower is lily")) {
+                jTextArea1.setText("Becasue if season is spring\n" +
+                        "and root type is bulb\n" +
+                        "and perfumed is true\n" +
+                        "and height is small\n" +
+                        "and life type is perennial\n" +
+                        "then flower name is lily");
+            }
+            if (answer.equals("The Flower is Begonia")) {
+                jTextArea1.setText(
+                        "and soil is " + Globals.SOIL + "\n" +
+                                "and height is small\n" +
+                                "and life type is annual\n" +
+                                "then flower name is Begonia");
+            }
+            if (answer.equals("The Flower is Azalea")) {
+                jTextArea1.setText("Becasue if season is winter\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "then flower name is Azalea");
+            }
+            if (answer.equals("The Flower is Azalea")) {
+                jTextArea1.setText("Becasue if season is winter\n" +
+                        "and the color is " + Globals.COLOR + "\n" +
+                        "then flower name is Azalea");
+            }
+            if (answer.equals("The Flower is Rose")) {
+                jTextArea1.setText(
+                        "and the color is " + Globals.COLOR + "\n" +
+                                "and life type is perennial\n" +
+                                "and root type is root\n" +
+                                "then flower name is Rose");
+            }
+            if (answer.equals("The Flower is white-lily")) {
+                jTextArea1.setText("Becasue if season is spring\n" +
+                        "and root type is bulb\n" +
+                        "and perfumed is true\n" +
+                        "and height is small\n" +
+                        "and life type is perennial\n" +
+                        "then flower name is white-lily");
+            }
+        }
+        catch (NullPointerException e)
+        {
+
+        }
+        
        
     }  
 

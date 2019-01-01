@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author user
@@ -49,6 +51,16 @@ public class panel5 extends javax.swing.JPanel {
         add(jButton1);
 
         jButton2.setText("Why?");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                jTextArea1.setText("If soil is acidic, flower name could be Camellia.\n" +
+                        "If soil is loose, flower name could be Begonia.\n" +
+                        "If soil is fertile, flower name could be Begonia.\n" +
+                        "If soil is rich, flower name could be Begonia.\n" +
+                        "If soil is well-drained, flower name could be Rose.\n");
+            }
+        });
         add(jButton2);
 
         jTextArea1.setColumns(20);

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author user
@@ -49,6 +51,18 @@ public class panel6 extends javax.swing.JPanel {
         add(jButton1);
 
         jButton2.setText("Why?");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                jTextArea1.setText("f size is between 10 & 50, the flower is considered small,\n" +
+                        "If size is between 50 & 150, the flower is considered medium,\n" +
+                        "If size is larger than 150, the flower is considered tall.\n" +
+
+                        "A small flower could be Lily, Begonia.\n" +
+                        "A Medium flower could be Chrysanthemum.\n" +
+                        "A tall flower could be Dahlia.");
+            }
+        });
         add(jButton2);
 
         jTextArea1.setColumns(20);
