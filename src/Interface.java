@@ -1,5 +1,4 @@
 
-package expertsystem;
 
 import javax.swing.*; 
 import java.awt.*;

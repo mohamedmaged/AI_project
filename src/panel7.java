@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package expertsystem;
 
 /**
  *
@@ -67,18 +66,18 @@ public class panel7 extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        if(jCheckBox1.isSelected()){
-                perfume = "true";
+                Globals.PERUME = "true";
             }
             else{
-                perfume = "false";
+                Globals.PERUME = "false";
             }
-        panel8 p8=new panel8();               
+
+            panel8 p8=new panel8();
                 this.remove(this.jButton1);
                 this.remove(this.jButton2);
                this.remove(this.jCheckBox1);
                   this.remove(this.jScrollPane1);
                    this.remove(this.jTextArea1);
-             
                 this.add(p8);
                 this.revalidate();
                 this.repaint();

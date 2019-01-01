@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package expertsystem;
 
 /**
  *
@@ -72,7 +71,7 @@ public class panel4 extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        lifecycle= (String)jComboBox1.getItemAt(jComboBox1.getSelectedIndex());  
+        Globals.LIFECYCLE= (String)jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
         panel5 p5=new panel5();
                this.remove(this.jButton1);
                 this.remove(this.jButton2);

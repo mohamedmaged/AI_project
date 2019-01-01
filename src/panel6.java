@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package expertsystem;
 
 /**
  *
@@ -60,7 +59,7 @@ public class panel6 extends javax.swing.JPanel {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        size= jTextField1.getText();
+        Globals.SIZE= jTextField1.getText();
         panel7 p7=new panel7();
                 this.remove(this.jButton1);
                 this.remove(this.jButton2);

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package expertsystem;
 
 /**
  *
@@ -60,7 +59,7 @@ public class panel5 extends javax.swing.JPanel {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        soil= (String)jComboBox1.getItemAt(jComboBox1.getSelectedIndex());  
+        Globals.SOIL= (String)jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
         panel6 p6=new panel6();
                 this.remove(this.jButton1);
                 this.remove(this.jButton2);

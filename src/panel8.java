@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package expertsystem;
 
 /**
  *
@@ -33,16 +32,20 @@ public class panel8 extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-
+        ClipsEnvironment clipsEnvironment = new ClipsEnvironment() ;
         jButton1.setText("What's My Flower ?");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+                clipsEnvironment.assertdata(Globals.COLOR,Globals.SEASON,Globals.LIFECYCLE,Globals.SOIL,Globals.SIZE,Globals.PERUME,Globals.ROOT);
+                clipsEnvironment.run();
+                jLabel1.setText(clipsEnvironment.getFlower());
+                clipsEnvironment.reset();
             }
         });
         add(jButton1);
 
-        jLabel1.setText("bbbbbbbbbbbbbghbbbb");
+        jLabel1.setText("your flower is ");
         add(jLabel1);
 
         jButton2.setText("How?");

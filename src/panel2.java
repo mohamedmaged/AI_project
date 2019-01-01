@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package expertsystem;
 
 import java.awt.Container;
 
@@ -61,7 +60,7 @@ public class panel2 extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-                roottype= (String)jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
+                Globals.ROOT= (String)jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
                 panel3 p3=new panel3();               
                 this.remove(this.jButton1);
                 this.remove(this.jButton2);
