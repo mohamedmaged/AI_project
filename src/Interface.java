@@ -1,5 +1,5 @@
-package javaapplication106;
 
+package expertsystem;
 
 import javax.swing.*; 
 import java.awt.*;
@@ -12,9 +12,10 @@ public class Interface extends JFrame {
          panel1 p1=new panel1();
          
          this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         this.setSize(700, 600);
+         this.setSize(700, 300);
+         //this.setLayout(new FlowLayout(FlowLayout.CENTER));
          JPanel p=new JPanel();
-         p.setBackground(Color.LIGHT_GRAY);
+         //p.setBackground(Color.LIGHT_GRAY);
          JButton Startbutton = new JButton("START");    
          p.add(Startbutton);
          Startbutton.setLocation(350, 300);
